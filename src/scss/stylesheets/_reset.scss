@@ -3,10 +3,8 @@
 
 body,
 html{
-	font-family: "Exo 2', sans-serif";
 	font-size: 100%;
 	height: 100%;
-	background-color: ghostwhite;
 }
 
 body{
@@ -31,6 +29,13 @@ button{
 }
 
 .container {
+  max-width: rem(1320);
+  padding: 0 $offset_one_side;
+  margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
+}
+
+.row {
+  @include row-flex;
 }

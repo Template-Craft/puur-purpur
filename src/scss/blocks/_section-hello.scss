@@ -1,66 +1,68 @@
 .first-section{
-	padding: rem(12) 0 rem(16);
+  padding: rem(46) 0;
 
-	.section-content{
-		@include container();
+  background-color: var(--def-black);
 
-		display: flex;
-		flex-wrap: wrap;
-		width: 100%;
-		padding-top: rem(20);
-		box-sizing: border-box;
-	}
+  .layout {
+    column-count: 3;
+    column-gap: 0;
+  }
 
-	.col{
-		@include col();
-		@include size(4);
-		@include size-md(6);
-		@include size-sm(12);
-		@include col-padding();
+  .box-wrapper {
+    display: flex;
 
-		@include sm-block(){
-			margin-top: $offset_one_side;
+    &__row {
+      width: 80%;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
 
-				&:first-child{
-					margin-top: 0;
-				}
-		}
+    &__column {
+      width: 20%;
+      flex-direction: column;
+    }
+  }
 
-			&:nth-child(1){
-				height: rem(250);
-				background-color: cadetblue;
-			}
-			&:nth-child(2){
-				height: rem(320);
-				background-color: moccasin;
-			}
-			&:nth-child(3){
-				height: rem(160);
-				background-color: darksalmon;
-				@include md-block(){
-					margin-top: rem(-30);
-				}
 
-				@include sm-block(){
-					margin-top: $offset_one_side;
-				}
-			}
+  .box {
+    @include col;
 
-			&:nth-child(4){
-				height: rem(119);
-				background-color: lightblue;
-			}
+    min-height: rem(321);
 
-			&-txt{
-				margin-top: rem(12);
-				margin-bottom: rem(8);
-			}
+    margin-bottom: $offset;
 
-	}
+    border-radius: rem(30);
+    border: 1px solid #FFFEEC;
+    color: #fff;
 
-	.sect-title{
-		@include font(em(22), 600);
-		margin: rem(20) 0 rem(20);
-		text-align: center;
-	}
+    &__clothers {
+      @include size(8);
+      @include size-md(12);
+      @include md-block() {
+        background-color: blue;
+      }
+    }
+
+    &__clotherschildren {
+      @include size(4);
+    }
+
+    &__kabluk {
+      @include size(12);
+
+      min-height: rem(677);
+    }
+
+    &__market {
+      @include size(6);
+    }
+
+    &__postel {
+      @include size(3);
+    }
+
+    &__bags {
+      @include size(3);
+    }
+  }
 }
