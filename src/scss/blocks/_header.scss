@@ -1,0 +1,14 @@
+.header{
+	padding: rem(30) 0 rem(25);
+	background-color: $primary-white;
+
+	&-title{
+		@include font(em(14), 600);
+		text-align: center;
+		@include css4{
+			color: var(--color-primary-green);
+		}
+	}
+
+
+}

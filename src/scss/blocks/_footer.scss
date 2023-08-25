@@ -1,0 +1,12 @@
+.footer{
+	padding: rem(12) 0 rem(32);
+	background-color: $primary-black;
+
+	&-title{
+		@include font(em(14), 600);
+		padding: rem(22) 0 rem(12);
+		text-align: center;
+		color: $clr-white;
+	}
+
+}

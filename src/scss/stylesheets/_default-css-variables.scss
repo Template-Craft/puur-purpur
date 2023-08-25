@@ -1,0 +1,55 @@
+// How to use css4 variables (custom properties) right now and maintain backwards compatibility.
+
+// Using the provided SASS var() function you can start using css4 custom properties and by changing the $css4 variable to 'false' it the function will return the value of the used variable instead of css4 function. So you can develope in css4 and in the end convert the whole styles back to css3.
+
+// If you want to use css4 variables AND have fall-back to css3 in the same time, you can wrap the properties that use the var() function in the css4 mixin. This is the best way to use the css4 variables, as it can be easily maintained from css4 through css4 with css3 fallback, to css3 only, just by changing two variables - $css4, and $compatibility
+
+$css4: true;
+$compatibility: false; //true - если нужна совместимость, false - если нет
+
+//необходимо определить переменные в sass, вместо :root по соображениям совместимости.
+$variables: (
+  --color-primary-green: #00a698,
+  --background: skyblue,
+  --font: sans-serif
+);
+
+//Здесь мы передаем переменные из массива($variables) в элемент :root
+@if($css4) {
+  :root {
+    @each $variable, $value in $variables {
+      #{$variable}: $value;
+    }
+  }
+}
+
+//this is the "magic" function
+@function var($variable) {
+  @if($css4) {
+    @return unquote('var(' + $variable + ')');
+  } @else {
+    @return map-get($variables, $variable);
+  }
+}
+
+//миксин временно устанавливает для переменной $css4 значение false, компилирует резервный вариант css3, затем снова делает переменную истинной и компилирует код css4. Он должен содержать свойства, использующие переменные css4, иначе произойдет неоправданное дублирование свойств.
+@mixin css4 {
+  @if ($css4) {
+    $css4-backup: $css4;
+    @if($compatibility) {
+      $css4: false !global;
+      @content;
+    }
+    $css4: true !global;
+    @content;
+    $css4: $css4-backup;
+  } 
+  @else {
+    @content;
+  }
+}
+
+// вызов:
+// @include css4 {
+//   background: var(--color-primary-green);
+// }
