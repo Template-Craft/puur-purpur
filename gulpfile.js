@@ -1,7 +1,10 @@
 const gulp = require('gulp'); // Подключаем Gulp
 const browserSync = require('browser-sync').create();
 const watch = require('gulp-watch');
-const sass = require('gulp-sass');
+
+const dartsass = require('sass');
+const gulpsass = require('gulp-sass');
+
 const qcmq = require('gulp-group-css-media-queries');
 const smartgrid = require('smart-grid');
 const autoprefixer = require('gulp-autoprefixer');
@@ -13,6 +16,8 @@ const concat = require('gulp-concat');
 const plumber = require('gulp-plumber');
 const fileinclude = require('gulp-file-include'); // Для подключения файлов друг в друга
 const del = require('del');
+
+const sass = gulpsass(dartsass);
 
 // Таск для компиляции SCSS в CSS
 gulp.task('scss', function(callback) {
