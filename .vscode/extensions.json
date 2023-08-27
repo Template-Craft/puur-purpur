@@ -1,0 +1,26 @@
+{
+  "recommendations": [
+    "Atishay-Jain.All-Autocomplete",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-complete-tag",
+    "vunguyentuan.vscode-css-variables",
+    "pranaygp.vscode-css-peek",
+    "EditorConfig.EditorConfig",
+    "dbaeumer.vscode-eslint",
+    "mkxml.vscode-filesize",
+    "wix.vscode-import-cost",
+    "ionutvmi.path-autocomplete",
+    "esbenp.prettier-vscode",
+    "Nkzq.sass-variables-helper",
+    "mrmlnc.vscode-scss",
+    "syler.sass-indented",
+    "gencer.html-slim-scss-css-class-completion",
+    "donjayamanne.git-extension-pack",
+    "eamodio.gitlens",
+    "MS-CEINTL.vscode-language-pack-ru",
+    "akamud.vscode-theme-onedark",
+    "equinusocio.vsc-material-theme-icons",
+    "PKief.material-product-icons",
+    "miguelsolorio.fluent-icons"
+  ]
+}

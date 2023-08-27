@@ -1,0 +1,38 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontSize": 12,
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
+  "breadcrumbs.enabled": true,
+  "editor.formatOnSave": true,
+  "editor.linkedEditing": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.prettier": true
+  },
+  "scss.format.newlineBetweenSelectors": false,
+  "css.format.newlineBetweenSelectors": false,
+  // Настройки ESLint
+  "emmet.triggerExpansionOnTab": true,
+  // Если шрифт поддерживает стрелочки и т.п. знаки, то включить их (лигатуры)
+  "editor.fontLigatures": true,
+  // Тип курсора
+  "editor.cursorStyle": "line",
+  "explorer.confirmDelete": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "cssPeek.peekFromLanguages": ["html", "django-html", "laravel-blade", "razor", "vue", "blade", "pug", "jade", "handlebars", "php", "twig", "md", "nunjucks", "javascript", "javascriptreact", "erb", "typescript", "typescriptreact", "HTML (Eex)", "html-eex", "ejs", "njk"],
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[sass]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
