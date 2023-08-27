@@ -1,0 +1,8 @@
+#!/bin/bash
+
+commitRegex='^(UPD-[0-9]:[0-9]: )'
+
+if ! grep -qE "$commitRegex" "$1"; then
+  echo "Aborting according commit message policy. Please specify project issue UPD-XXXX."
+  exit 1
+fi
