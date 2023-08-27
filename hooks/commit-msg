@@ -5,7 +5,7 @@
 commit_types="(UPD:|FIX:|FEAT:)"
 #MM/DD/YYYY
 months_regex="(0?[1-9]|1[012])"
-default_commit_regex="^${commit_types}${months_regex}$"
+default_commit_regex="^${commit_types}${months_regex}"
 
 # collors collection:
 RED="\e[31m"
@@ -17,7 +17,7 @@ commit_message=$(cat "$1")
 
 
 # проверим коммит, если всё ок пропускаем
-if [[ "$commit_message" =~ "$default_commit_regex" ]]; then
+if [[ "$commit_message" =~ $default_commit_regex ]]; then
   echo -e "${GREEN}Коммит соответствует заданным требованиям, пропускаем его...${ENDCOLOR}"
   exit 0
 fi
