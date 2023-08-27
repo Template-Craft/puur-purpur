@@ -30,9 +30,6 @@ quote_type = double
 [{*.scss,*.sass,*.less,*.css}]
 quote_type = single
 
-[{*.js,*.ts}]
-quote_type = single
-
 [*.json]
 quote_type = double
 

@@ -5,7 +5,6 @@
     {
       "files": "./src/html/**/*.html",
       "options": {
-        "tabWidth": 2,
         "singleQuote": false,
         "bracketSameLine": true,
         "singleAttributePerLine": true
@@ -20,8 +19,7 @@
     {
       "files": "*.json",
       "options": {
-        "singleQuote": false,
-        "tabWidth": 2
+        "singleQuote": false
       }
     },
     {
