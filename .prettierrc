@@ -1,0 +1,35 @@
+{
+  "title": "Project code style formatting schema for .prettierrc",
+  "editorconfig": true,
+  "overrides": [
+    {
+      "files": "./src/html/**/*.html",
+      "options": {
+        "tabWidth": 2,
+        "singleQuote": false,
+        "bracketSameLine": true,
+        "singleAttributePerLine": true
+      }
+    },
+    {
+      "files": ["./src/scss/**/*.scss"],
+      "options": {
+        "singleQuote": true
+      }
+    },
+    {
+      "files": "*.json",
+      "options": {
+        "singleQuote": false,
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": ["*.js", "*.mjs", "*.cjs"],
+      "options": {
+        "singleQuote": true,
+        "tabWidth": 2
+      }
+    }
+  ]
+}
