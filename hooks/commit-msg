@@ -1,23 +1,11 @@
 #!/usr/bin/env bash
 
-commit_types="(UPD-[0-9]:[0-9])"
-default_commit_regex="^${commit_types}(\([a-z \-]+\))?!?: .+$"
+commit_types="(UPD:|FIX:|FEAT:)"
+months_regex="(0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]"
+default_commit_regex="^(0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2}$"
 
-# Получаем сообщение фиксации
-commit_message=$(cat "$1")
-
-# Проверка сообщения, если всё хорошо, коммит проходит
-if [[ "$commit_message" =~ $default_commit_regex ]]; then
-  echo -e "\e[32mCommit message meets project commit standarts...\e[0m"
-  exit 0
+if ! grep -qE "$default_commit_regex" "$1"; then
+  echo "Error ${default_commit_regex}"
+  exit 1
 fi
 
-# Выводим ошибку
-echo -e "\e[31mCommit message error\e[0m"
-echo "***********************************************************************"
-echo "Here are the  list of message type : ${commit_types}"
-echo "  <type>: <subject> max 50char ex :- fix: invalid request for login api"
-echo "  <type(<scope>):> <subject> (Max 50 char) - <scope> is option ex: - fix(user): email address is empty on profile api"
-echo "***********************************************************************"
-
-exit 1
