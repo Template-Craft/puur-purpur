@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 
 commit_types="(UPD:|FIX:|FEAT:)"
-months_regex="(0?[1-9]|1[012])"
+months_regex="(0?[1-9]|1[012])" #MM/DD/YYYY
 default_commit_regex="^${commit_types}${months_regex}"
 
+# collors collection:
+RED="\e[31m"
+ENDCOLOR="\e[0m"
+
 if ! grep -qE "$default_commit_regex" "$1"; then
-  echo "Error ${default_commit_regex}"
+  echo -e "${RED}Commit error ${commit_types} and MM/DD/YYYY or MM/DD/YY ${ENDCOLOR}"
   exit 1
 fi
 
