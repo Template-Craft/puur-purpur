@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 
 commitRegex='^(UPD-[0-9]+|merge|hotfix)'
