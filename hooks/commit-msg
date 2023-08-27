@@ -1,15 +1,33 @@
 #!/usr/bin/env bash
 
+
+# Регулярные выражения для проверки коммитов
 commit_types="(UPD:|FIX:|FEAT:)"
-months_regex="(0?[1-9]|1[012])" #MM/DD/YYYY
-default_commit_regex="^${commit_types}${months_regex}"
+#MM/DD/YYYY
+months_regex="(0?[1-9]|1[012])"
+default_commit_regex="^${commit_types}${months_regex}$"
 
 # collors collection:
 RED="\e[31m"
+GREEN="\e[32m"
 ENDCOLOR="\e[0m"
 
-if ! grep -qE "$default_commit_regex" "$1"; then
-  echo -e "${RED}Commit error ${commit_types} and MM/DD/YYYY or MM/DD/YY ${ENDCOLOR}"
-  exit 1
+# Читаем сообщение коммита (временно хранится)
+commit_message=$(cat "$1")
+
+
+# проверим коммит, если всё ок пропускаем
+if [[ "$commit_message" =~ "$default_commit_regex" ]]; then
+  echo -e "${GREEN}Коммит соответствует заданным требованиям, пропускаем его...${ENDCOLOR}"
+  exit 0
 fi
 
+# Если что-то пошло не так:
+echo -e "${RED}Сообщение коммита содержит ошибку, и не подходит под стандарты проекта${ENDCOLOR}"
+echo "***********************************************************************"
+echo "Список префиксов сообщений : ${commit_types}"
+echo "  <type>:<months> максимум 50 символов :- UPD:27.08.23 - добавлен хук, для контроля коммитов..."
+echo "***********************************************************************"
+
+# выходим из программы
+exit 1
