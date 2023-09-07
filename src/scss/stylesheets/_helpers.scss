@@ -1,28 +1,20 @@
 // Библиотека полезных функций:
 
 // переводим пиксели в ремы вызываем так: rem(18)
-@use "sass:math";
+@use 'sass:math';
 
 @function rem($px) {
-	@return math.div($px, 16) + rem;
+  @return math.div($px, 16) + rem;
 }
 
 // переводим пиксели в em вызываем так: em(18)
 @function em($px) {
-	@return math.div($px, 16) + em;
+  @return math.div($px, 16) + em;
 }
 
 @mixin font($size, $weight) {
-	font: {
-		size: $size;
-		weight: $weight;
-	}
-}
-
-.container {
-  @include container();
-  @include sm(max-width, rem(510));
-  @include md(max-width, rem(690));
-  @include lg(max-width, rem(930));
-  @include xl(max-width, rem(1110));
+  font: {
+    size: $size;
+    weight: $weight;
+  }
 }
