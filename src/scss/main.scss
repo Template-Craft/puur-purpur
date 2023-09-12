@@ -1,7 +1,10 @@
 // Глобальные стили
 @import 'stylesheets/_stylesheets.scss';
 
+// Компоненты
+@import 'components/_clothes-cards.scss';
+
 // Основные файлы
 @import 'sections/_header.scss';
-@import 'sections/_section-hello.scss';
+@import 'sections/_general.scss';
 @import 'sections/_footer.scss';

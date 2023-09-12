@@ -1,0 +1,143 @@
+.box {
+  @include col;
+  height: rem(321);
+  margin-bottom: $offset;
+  border-radius: rem(30);
+  color: #fff;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+
+  &__title {
+    @include font(em(52), 900);
+
+    text-transform: uppercase;
+  }
+
+  &__description {
+    @include font(em(24), 500);
+
+    margin-top: rem(33);
+
+    text-transform: uppercase;
+  }
+
+  &__hidden-content {
+    visibility: hidden;
+  }
+
+  &__clothes {
+    @include size(7);
+    @include size-md(12);
+
+    &::before {
+      content: '';
+
+      width: 100%;
+      height: 100%;
+      display: block;
+
+      background-image: url('../img/clothes.jpg');
+      background-repeat: no-repeat;
+      background-color: #dee2e3;
+      border-radius: rem(30);
+    }
+
+    &:hover,
+    &:focus {
+      &::before {
+        display: none;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      & > .box__hidden-content {
+        padding: rem(25) rem(32);
+        visibility: visible;
+
+        position: absolute;
+        top: 0;
+
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        background-color: #000;
+        color: var(--txt-white-clr);
+
+        border-radius: rem(30);
+        box-sizing: border-box;
+      }
+    }
+  }
+
+  &__clothes-children {
+    @include size(5);
+
+    padding: rem(28) rem(26);
+    background-color: #fffeec;
+    border-radius: rem(30);
+
+    &:hover,
+    &:focus {
+      &::before {
+        content: '';
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+        display: block;
+
+        background-image: url('../img/for-children.jpg');
+        background-repeat: no-repeat;
+        background-position: 50% 40%;
+        background-size: cover;
+        border-radius: rem(30);
+      }
+    }
+
+    & > .box__hidden-content {
+      visibility: visible;
+      display: flex;
+      flex-direction: column;
+
+      text-align: right;
+
+      .box__title {
+        font-size: em(35);
+        color: #000000;
+      }
+
+      .box__description {
+        font-size: em(20);
+
+        margin-top: rem(8);
+
+        color: #000000;
+      }
+    }
+  }
+
+  &__shoes {
+    @include size(12);
+    min-height: rem(677);
+  }
+
+  &__market {
+    @include size(6);
+  }
+
+  &__bed {
+    @include size(3);
+  }
+
+  &__bags {
+    @include size(3);
+  }
+}

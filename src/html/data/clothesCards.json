@@ -1,0 +1,27 @@
+[
+  {
+    "classModif": "box__clothes",
+    "boxTitle": "одежда",
+    "boxDescription": "повседневная / офисная / верхняя / шубы"
+  },
+  {
+    "classModif": "box__clothes-children",
+    "boxTitle": "для самых маленьких",
+    "boxDescription": "рекомендовано дерматологами"
+  },
+  {
+    "classModif": "box__market",
+    "boxTitle": "маркет",
+    "boxDescription": "скоро запустим"
+  },
+  {
+    "classModif": "box__bed",
+    "boxTitle": "для дома",
+    "boxDescription": "забота о здоровье"
+  },
+  {
+    "classModif": "box__bags",
+    "boxTitle": "сумки",
+    "boxDescription": ""
+  }
+]

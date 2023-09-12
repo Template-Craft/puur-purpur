@@ -1,0 +1,8 @@
+<section class="clothes-cards">
+  <div class="container">
+    <div class="row">
+      <div class="box-wrapper box-wrapper__row">@@loop('components/_clothes-cards.html', "../html/data/clothesCards.json")</div>
+      <div class="box-wrapper box-wrapper__column">@@include_once('components/_clothes-cards.html', { "classModif": "box__shoes", "boxTitle": "обувь", "boxDescription": "ручная чистка " })</div>
+    </div>
+  </div>
+</section>

@@ -42,3 +42,18 @@ button {
 .row {
   @include row-flex;
 }
+
+.box-wrapper {
+  display: flex;
+
+  &__row {
+    width: 80%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  &__column {
+    width: 20%;
+    flex-direction: column;
+  }
+}
