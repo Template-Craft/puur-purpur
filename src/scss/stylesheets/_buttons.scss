@@ -4,7 +4,7 @@
 $btn-padding-y: #{rem(18)} !default;
 $btn-padding-x: #{rem(22)} !default;
 
-$btn-font-family: 'Montserrat', sans-serif !default;
+$btn-font-family: $ff-proxima-black !default;
 $btn-font-size: #{em(35)} !default;
 
 $btn-line-height: normal !default;
@@ -12,6 +12,7 @@ $btn-white-space: null !default; // Set to `nowrap` to prevent text wrapping
 $btn-text-transform: uppercase;
 
 $btn-min-width: #{rem(198)};
+$btn-min-height: #{rem(75)};
 
 $link-decoration: underline !default;
 
@@ -27,7 +28,8 @@ $btn-border-active-color: var(--btn-native-background);
 
 $btn-font-weight: 900 !default;
 
-$btn-hover-shadow: 0 #{rem(14)} 0 0 var(--def-black);
+$btn-hover-shadow-color: #000000;
+$btn-hover-shadow: 0 #{rem(14)} 0 0 $btn-hover-shadow-color;
 
 $btn-box-shadow:
   inset 0 1px 0 rgba(var(--def-black), 0.15),
@@ -45,6 +47,7 @@ $btn-transition:
   color 0.15s ease-in-out,
   background-color 0.15s ease-in-out,
   border-color 0.15s ease-in-out,
+  position 0.15s ease-in-out,
   box-shadow 0.15s ease-in-out !default;
 
 $link-hover-decoration: null !default;
@@ -66,6 +69,7 @@ button:not(:disabled) {
 // По умолчанию кнопки жёлтые
 .btn {
   display: inline-block;
+  align-self: baseline;
 
   text-align: center;
   text-decoration: if($link-decoration == none, null, none);
@@ -75,6 +79,7 @@ button:not(:disabled) {
   padding: $btn-padding-y $btn-padding-x;
 
   min-width: $btn-min-width;
+  min-height: $btn-min-height;
 
   font-family: $btn-font-family;
   font-size: $btn-font-size;
@@ -125,5 +130,289 @@ button:not(:disabled) {
     pointer-events: none;
     opacity: $btn-disabled-opacity;
     box-shadow: none;
+  }
+
+  // чёрная кнопка
+  &__darkness {
+    @extend .btn;
+
+    $btn-padding-x: #{rem(44)};
+
+    $btn-font-size: #{em(30)};
+
+    $btn-color: var(--btn-native-background);
+    $btn-background-color: var(--def-black);
+    $btn-hover-shadow-color: var(--btn-native-background);
+    $btn-hover-shadow: 0 #{rem(14)} 0 0 $btn-hover-shadow-color;
+
+    $btn-active-background-color: var(--btn-native-background);
+    $btn-active-color: var(--def-black);
+    $btn-border-active-color: var(--btn-native-background);
+    $btn-active-border: $btn-border-width solid $btn-border-active-color;
+
+    $btn-focus-box-shadow: var(--def-black);
+
+    font-size: $btn-font-size;
+
+    padding-right: $btn-padding-x;
+    padding-left: $btn-padding-x;
+
+    position: relative;
+
+    color: $btn-color;
+    background-color: $btn-background-color;
+
+    &:hover {
+      color: $btn-color;
+      box-shadow: $btn-hover-shadow;
+
+      &::before {
+        content: '';
+
+        position: absolute;
+        bottom: rem(-20);
+        left: rem(-2);
+
+        width: 100%;
+        height: $btn-min-height;
+
+        z-index: -1;
+
+        background-color: var(--btn-native-background);
+        border-radius: $border-radius;
+        border: $btn-border-width solid #000000;
+      }
+    }
+
+    .btn-check:focus + &,
+    &:focus {
+      box-shadow: $btn-hover-shadow;
+
+      &::before {
+        content: '';
+
+        position: absolute;
+        bottom: rem(-20);
+        left: rem(-2);
+
+        width: 100%;
+        height: $btn-min-height;
+
+        z-index: -1;
+
+        background-color: var(--btn-native-background);
+        border-radius: $border-radius;
+        border: $btn-border-width solid #000000;
+      }
+    }
+
+    .btn-check:checked + &,
+    .btn-check:active + &,
+    &:active,
+    &.active {
+      background-color: $btn-active-background-color;
+      color: $btn-active-color;
+      border: $btn-active-border;
+
+      &:focus {
+        box-shadow: $btn-focus-box-shadow;
+      }
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  // розовая кнопка
+  &__barbieland {
+    @extend .btn;
+
+    $btn-padding-x: #{rem(44)};
+
+    $btn-font-size: #{em(30)};
+
+    $btn-color: var(--def-black);
+    $btn-background-color: var(--def-pink);
+
+    $btn-border-color: var(--btn-native-background);
+
+    $btn-hover-shadow-color: var(--def-black);
+    $btn-active-shadow-color: var(--def-pink);
+    $btn-hover-shadow: 0 #{rem(14)} 0 0 $btn-hover-shadow-color;
+    $btn-active-shadow: 0 #{rem(14)} 0 0 $btn-active-shadow-color;
+
+    $btn-active-background-color: var(--btn-native-background);
+    $btn-active-color: var(--def-pink);
+    $btn-border-active-color: var(--btn-native-background);
+    $btn-active-border: $btn-border-width solid $btn-border-active-color;
+
+    font-size: $btn-font-size;
+
+    padding-right: $btn-padding-x;
+    padding-left: $btn-padding-x;
+
+    position: relative;
+
+    color: $btn-color;
+    background-color: $btn-background-color;
+    border-color: $btn-border-color;
+
+    &:hover {
+      color: $btn-color;
+      box-shadow: $btn-hover-shadow;
+
+      &::before {
+        content: '';
+
+        position: absolute;
+        bottom: rem(-18);
+        left: rem(-2);
+
+        width: 100%;
+        height: $btn-min-height;
+
+        z-index: -1;
+
+        border-radius: $border-radius;
+        border: $btn-border-width solid var(--btn-native-background);
+      }
+    }
+
+    .btn-check:focus + &,
+    &:focus {
+      box-shadow: $btn-hover-shadow;
+
+      &::before {
+        content: '';
+
+        position: absolute;
+        bottom: rem(-18);
+        left: rem(-2);
+
+        width: 100%;
+        height: $btn-min-height;
+
+        z-index: -1;
+
+        border-radius: $border-radius;
+        border: $btn-border-width solid var(--btn-native-background);
+      }
+    }
+
+    .btn-check:checked + &,
+    .btn-check:active + &,
+    &:active,
+    &.active {
+      background-color: $btn-active-background-color;
+      color: $btn-active-color;
+      border-color: #000000;
+      box-shadow: $btn-active-shadow;
+
+      &:focus {
+        box-shadow: $btn-focus-box-shadow;
+      }
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  // жёлтая крупная кнопка
+  &__yellow {
+    @extend .btn;
+
+    $btn-padding-y: #{rem(37)};
+    $btn-padding-x: #{rem(26)};
+
+    $btn-font-size: #{em(30)};
+
+    $border-radius: #{rem(19)};
+
+    $btn-color: var(--def-black);
+    $btn-background-color: var(--def-yellow);
+
+    $btn-border-color: var(--def-black);
+
+    $btn-hover-shadow-color: var(--def-black);
+    $btn-active-shadow-color: var(--def-yellow);
+    $btn-hover-shadow: 0 #{rem(14)} 0 0 $btn-hover-shadow-color;
+    $btn-active-shadow: 0 #{rem(14)} 0 0 $btn-active-shadow-color;
+
+    $btn-active-background-color: var(--def-black);
+    $btn-active-color: var(--def-yellow);
+    $btn-border-active-color: var(--btn-native-background);
+    $btn-active-border: $btn-border-width solid $btn-border-active-color;
+
+    font-size: $btn-font-size;
+
+    padding: $btn-padding-y $btn-padding-x;
+
+    position: relative;
+
+    color: $btn-color;
+    background-color: $btn-background-color;
+    border-color: $btn-border-color;
+    border-radius: $border-radius;
+
+    &:hover {
+      color: $btn-color;
+      box-shadow: $btn-hover-shadow;
+
+      &::before {
+        content: '';
+
+        position: absolute;
+        bottom: rem(-18);
+        left: rem(-2);
+
+        width: 100%;
+        height: $btn-min-height;
+
+        z-index: -1;
+
+        border-radius: $border-radius;
+        border: $btn-border-width solid var(--btn-native-background);
+      }
+    }
+
+    .btn-check:focus + &,
+    &:focus {
+      box-shadow: $btn-hover-shadow;
+
+      &::before {
+        content: '';
+
+        position: absolute;
+        bottom: rem(-18);
+        left: rem(-2);
+
+        width: 100%;
+        height: $btn-min-height;
+
+        z-index: -1;
+
+        border-radius: $border-radius;
+        border: $btn-border-width solid var(--def-black);
+      }
+    }
+
+    .btn-check:checked + &,
+    .btn-check:active + &,
+    &:active,
+    &.active {
+      background-color: $btn-active-background-color;
+      color: $btn-active-color;
+      border-color: var(--def-yellow);
+
+      &:focus {
+        box-shadow: $btn-focus-box-shadow;
+      }
+
+      &::before {
+        display: none;
+      }
+    }
   }
 }
