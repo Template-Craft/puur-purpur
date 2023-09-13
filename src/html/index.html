@@ -18,10 +18,14 @@
   </head>
 
   <body class="body-wrapper">
-    @@include('sections/header.html')
+    @@include('sections/_header.html')
 
-    <main class="main-content">@@include('sections/_general.html')</main>
+    <!-- display: block; -->
+    <main class="main-content">
+      @@include('sections/general_page/_services.html')
+      @@include('sections/general_page/_about_us.html')
+    </main>
 
-    @@include('sections/footer.html')
+    @@include('sections/_footer.html')
   </body>
 </html>

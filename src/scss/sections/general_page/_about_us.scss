@@ -1,0 +1,11 @@
+.about_us {
+  padding: rem(46) 0 rem(33);
+
+  background-color: var(--def-lightyellow);
+
+  .row {
+    @include lg-block() {
+      flex-direction: row-reverse;
+    }
+  }
+}

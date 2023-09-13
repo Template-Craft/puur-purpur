@@ -1,0 +1,78 @@
+[
+  {
+    "onlyTitle": true,
+    "classModif": "info-card__info",
+    "cardTitle": "сервис , который дарит свободу"
+  },
+  {
+    "hiddenBlock": true,
+    "titleMode": false,
+    "onlyTitle": true,
+    "descriptionMode": true,
+    "classModif": "info-card__garanty",
+    "cardTitle": "Гарантия сроков",
+    "cardDescription": "если не Выполним в заявленные сроки, то сделаем скидку 50% или подарим приятный бонус"
+  },
+  {
+    "imageMode": true,
+    "previewPath": "img/decor/women.jpeg",
+    "classModif": "info-card__preview_1"
+  },
+  {
+    "imageMode": true,
+    "previewPath": "img/decor/divan.png",
+    "classModif": "info-card__preview_2"
+  },
+  {
+    "imageMode": true,
+    "previewPath": "img/decor/polki.jpeg",
+    "classModif": "info-card__preview_3"
+  },
+  {
+    "imageMode": true,
+    "previewPath": "img/decor/cover.png",
+    "classModif": "info-card__preview_4"
+  },
+  {
+    "imageMode": true,
+    "previewPath": "img/decor/wedmed.jpeg",
+    "classModif": "info-card__preview_5"
+  },
+  {
+    "hiddenBlock": true,
+    "titleMode": false,
+    "onlyTitle": true,
+    "descriptionMode": true,
+    "classModif": "info-card__all_in_one",
+    "cardTitle": "все в одном месте",
+    "cardDescription": "чистим, красим, ремонтируем, удаляем пятна, гладим, восстанавливаем одежду, обувь, мебель, шторы, ковры, игрушки"
+  },
+  {
+    "hiddenBlock": true,
+    "titleMode": false,
+    "onlyTitle": true,
+    "descriptionMode": true,
+    "classModif": "info-card__delivery",
+    "cardTitle": "Удобная доставка",
+    "cardDescription": "ЗАБЕРЕМ И доставИМ по городу от 2000 ₽ БЕСПЛАТНО"
+  },
+  {
+    "hiddenBlock": true,
+    "titleMode": false,
+    "onlyTitle": true,
+    "descriptionMode": true,
+    "classModif": "info-card__kombo",
+    "cardTitle": "выгодное комбо",
+    "cardDescription": "в каждом разделе есть выгодные комбинации услуг, которые не только сэкономят деньги, но и дадут максимальный эффект"
+  },
+  {
+    "imageMode": true,
+    "previewPath": "img/decor/pled.jpeg",
+    "classModif": "info-card__preview_6"
+  },
+  {
+    "imageMode": true,
+    "previewPath": "img/decor/bags.png",
+    "classModif": "info-card__preview_7"
+  }
+]

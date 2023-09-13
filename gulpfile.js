@@ -24,7 +24,10 @@ const beautify = require('gulp-beautify');
 
 const sass = gulpsass(dartsass);
 
-const styleLibCollection = ['node_modules/normalize.css/normalize.css', 'node_modules/animate.css/animate.css'];
+const styleLibCollection = [
+  'node_modules/normalize.css/normalize.css',
+  'node_modules/animate.css/animate.css',
+];
 
 // Таск для компиляции SCSS в CSS
 gulp.task('scss', function (callback) {
@@ -114,6 +117,13 @@ gulp.task('html', function (callback) {
       fileinclude({
         prefix: '@@',
         basepath: path.resolve(__dirname, './src/html/'),
+        context: {
+          titleMode: false, // -> по умолчанию нет заголовка
+          descriptionMode: false, // -> по умолчанию нет описания
+          hiddenBlock: false, // -> по умолчанию нет скрываемого блока
+          imageMode: false, // -> по умолчанию нет изображения
+          onlyTitle: false, // -> режим только заголовка по умолчанию откл.
+        },
       }),
     )
     .pipe(
@@ -163,7 +173,10 @@ gulp.task('watch', function () {
   watch(['./src/*.html'], gulp.parallel(browserSync.reload));
 
   // Следим за картинками и скриптами и обновляем браузер
-  watch(['./build/js/**/*.*', './build/img/**/*.*', './build/fonts/**/*.*'], gulp.parallel(browserSync.reload));
+  watch(
+    ['./build/js/**/*.*', './build/img/**/*.*', './build/fonts/**/*.*'],
+    gulp.parallel(browserSync.reload),
+  );
 
   // Запуск слежения и компиляции SCSS с задержкой
   watch('./src/scss/**/*.scss', function () {
@@ -195,4 +208,11 @@ gulp.task('clean:build', function () {
 
 // Дефолтный таск (задача по умолчанию)
 // Запускаем одновременно задачи server и watch
-gulp.task('default', gulp.series(gulp.parallel('clean:build'), gulp.parallel('html', 'scss', 'css-lib', 'copy:img', 'copy:fonts', 'copy:js'), gulp.parallel('server', 'watch')));
+gulp.task(
+  'default',
+  gulp.series(
+    gulp.parallel('clean:build'),
+    gulp.parallel('html', 'scss', 'css-lib', 'copy:img', 'copy:fonts', 'copy:js'),
+    gulp.parallel('server', 'watch'),
+  ),
+);
