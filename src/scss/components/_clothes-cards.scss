@@ -127,6 +127,51 @@
   &__shoes {
     @include size(12);
     min-height: rem(677);
+
+    &::before {
+      content: '';
+
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+
+      background-image: url('../img/shoes.jpg');
+      background-repeat: no-repeat;
+      border-radius: rem(30);
+    }
+
+    &:hover,
+    &:focus {
+      &::before {
+        display: none;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      & > .box__hidden-content {
+        visibility: visible;
+        position: absolute;
+        
+        width: 100%;
+        height: 100%;
+        padding-top: rem(29);
+        padding-left: rem(28);
+        text-align: left;
+        background-color: #FFA3FF;
+        .box__title {
+          font-size: 60px;
+        }
+
+        .box__description {
+          margin-top: 20px;
+          font-size: 24px;
+
+        }
+
+      }
+    }
   }
 
   &__market {
@@ -145,7 +190,6 @@
 
       background-image: url('../img/bed.jpg');
       background-repeat: no-repeat;
-      // background-color: #dee2e3;
       border-radius: rem(30);
     }
 
