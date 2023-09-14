@@ -134,10 +134,10 @@
       width: 100%;
       height: 100%;
       display: block;
-      object-fit: cover;
 
       background-image: url('../img/shoes.jpg');
       background-repeat: no-repeat;
+      background-size: cover;
       border-radius: rem(30);
     }
 
@@ -153,13 +153,13 @@
       & > .box__hidden-content {
         visibility: visible;
         position: absolute;
-        
+
         width: 100%;
         height: 100%;
         padding-top: rem(29);
         padding-left: rem(28);
         text-align: left;
-        background-color: #FFA3FF;
+        background-color: #ffa3ff;
         .box__title {
           font-size: 60px;
         }
@@ -167,9 +167,7 @@
         .box__description {
           margin-top: 20px;
           font-size: 24px;
-
         }
-
       }
     }
   }
