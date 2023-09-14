@@ -199,15 +199,15 @@ P.S. Полезный ресурс [smart-grid](https://grid4web.ru/)
 - Чтобы вызвать html компонент необходимо написать @@include('your_folder/your_page_dir_name/your_file_name.html') пример см. ниже:
   **HTML**
 
-```HTML
+```html
 <body>
-    @@include('sections/your_page_dir_name/_your_page_section_name.html')
+  @@include('sections/your_page_dir_name/_your_page_section_name.html')
 </body>
 ```
 
 - Так же настроен контекст для более функциональных компонентов. Принимает параметры `true` и `false` - по умолчанию `false`, поэтому писать все свойства контекста в данных не обязательно. Контекст содержит несколько определенных свойств, которые нужно передавать перед проверками. Список свойств:
 
-```
+```js
 context: {
     titleMode: false, // -> по умолчанию нет заголовка
     descriptionMode: false, // -> по умолчанию нет описания
@@ -231,32 +231,22 @@ context: {
 
 _`html` компонент с логикой:_
 
-```
+```html
 <article class="info-card @@classModif">
   @@if (imageMode === true) {
-      <figure class="info-card__figure">
-        <img
-          src="@@previewPath"
-          alt="Decor element"
-          class="info-card__preview" />
-      </figure>
-  }
-
-  @@if (onlyTitle === true) {
+  <figure class="info-card__figure">
+    <img src="@@previewPath" alt="Decor element" class="info-card__preview" />
+  </figure>
+  } @@if (onlyTitle === true) {
+  <p class="info-card__title">@@cardTitle</p>
+  } @@if (hiddenBlock === true) {
+  <div class="info-card__hidden">
+    @@if (titleMode === true) {
     <p class="info-card__title">@@cardTitle</p>
-  }
-
-  @@if (hiddenBlock === true) {
-      <div class="info-card__hidden">
-
-        @@if (titleMode === true) {
-            <p class="info-card__title">@@cardTitle</p>
-        }
-
-        @@if (descriptionMode === true) {
-            <p class="info-card__description">@@cardDescription</p>
-        }
-      </div>
+    } @@if (descriptionMode === true) {
+    <p class="info-card__description">@@cardDescription</p>
+    }
+  </div>
   }
 </article>
 ```
@@ -265,7 +255,7 @@ _`html` компонент с логикой:_
 > <br><br>
 > Для этого мы в `.json` файле с данными пропишем следующее:
 
-```
+```json
 [
   {
     "imageMode": true,
@@ -276,7 +266,7 @@ _`html` компонент с логикой:_
     "classModif": "info-card__garanty",
     "cardTitle": "Гарантия сроков",
     "cardDescription": "если не Выполним в заявленные сроки, то сделаем скидку 50% или подарим приятный бонус"
-  },
+  }
 ]
 ```
 
@@ -285,7 +275,7 @@ _`html` компонент с логикой:_
 > <br><br>
 > С этим разобрались, теперь нам надо передать данные за это отвечает всё остальное в массиве т.е.:
 
-```
+```json
     "previewPath": "img/decor/women.jpeg", // Путь до картинки
     "classModif": "info-card__garanty", // модификатор класса
     "cardTitle": "Гарантия сроков", // заголовок
@@ -296,7 +286,7 @@ _`html` компонент с логикой:_
 
 > Теперь рассмотрим второй вариант, когда нам не нужно ничего, только картинка, массив с данными будет выглядеть следующим образом:
 
-```
+```json
 [
   {
     "imageMode": true,
@@ -318,7 +308,7 @@ _`html` компонент с логикой:_
 
 <br>
 
-```
+```json
 [
   {
     "onlyTitle": true,
@@ -333,7 +323,7 @@ _`html` компонент с логикой:_
 > `"onlyTitle": true,` -> как раз таки для этого и нужен, сообщаем что нам нужен один заголовок, ну и передаём остальные данные в массиве, в итоге давайте соединим все это в один массив с данными, пример:
 > <br>
 
-```
+```json
 [
   {
     "imageMode": true,
@@ -390,46 +380,45 @@ _Рассмотрим реальный пример, с подстановкой
 
 > Предположим у нас есть компонент `_cards.html` расположенный по пути: `html/components/_cards.html`, он фун-ный и его нужно распечатать с помощью `@@loop` в файле \_about.html по пути `html/sections/general_page/_about.html`:
 
-```
+```html
 <section class="about">
-    <div class="container">
-        <div class="row">
-            @@loop('components/_cards.html', "../html/data/abouCardsData.json")
-        </div>
-    </div>
+  <div class="container">
+    <div class="row">@@loop('components/_cards.html', "../html/data/abouCardsData.json")</div>
+  </div>
 </section>
 ```
 
 > Да, очень важно в указании данных использовать вот такой путь: `../html/data/yourComponentDataName.json` то же самое касается и вызова компонента: `components/your_component_name.html` > <br><br>
 > На выходе мы получим вот такой отрендеренный `html` код:
 
-```
+```html
 <section class="about">
-    <div class="container">
-        <div class="row">
-
-          <article class="info-card info-card__garanty">
-            <figure class="info-card__figure">
-              <img src="img/decor/women.jpeg" alt="Decor element" class="info-card__preview" />
-            </figure>
-            <div class="info-card__hidden">
-              <p class="info-card__title">Гарантия сроков</p>
-              <p class="info-card__description">если не Выполним в заявленные сроки, то сделаем скидку 50% или подарим приятный бонус</p>
-            </div>
-          </article>
-
-          <article class="info-card info-card__preview_1">
-            <figure class="info-card__figure">
-              <img src="img/decor/women.jpeg" alt="Decor element" class="info-card__preview" />
-            </figure>
-          </article>
-
-          <article class="info-card info-card__info">
-            <p class="info-card__title">сервис , который дарит свободу</p>
-          </article>
-
+  <div class="container">
+    <div class="row">
+      <article class="info-card info-card__garanty">
+        <figure class="info-card__figure">
+          <img src="img/decor/women.jpeg" alt="Decor element" class="info-card__preview" />
+        </figure>
+        <div class="info-card__hidden">
+          <p class="info-card__title">Гарантия сроков</p>
+          <p class="info-card__description">
+            если не Выполним в заявленные сроки, то сделаем скидку 50% или подарим приятный бонус
+          </p>
         </div>
+      </article>
+
+      <article class="info-card info-card__preview_1">
+        <figure class="info-card__figure">
+          <img src="img/decor/women.jpeg" alt="Decor element" class="info-card__preview" />
+        </figure>
+      </article>
+
+      <article class="info-card info-card__info">
+        <p class="info-card__title">сервис , который дарит свободу</p>
+      </article>
     </div>
+  </div>
+</section>
 ```
 
 ---
