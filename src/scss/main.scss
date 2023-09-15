@@ -8,7 +8,9 @@
 // Основные файлы
 @import 'sections/_header.scss';
 
+// Подключаем стили для главной страницы
 @import 'sections/general_page/_services.scss';
-@import 'sections/general_page/_about_us';
+@import 'sections/general_page/_about_us.scss';
+@import 'sections/general_page/_works.scss';
 
 @import 'sections/_footer.scss';
