@@ -1,12 +1,17 @@
 .box {
   @include col;
+
   height: rem(321);
   margin-bottom: $offset;
+
+  overflow: hidden;
+  position: relative;
   border-radius: rem(30);
   color: #fff;
-  overflow: hidden;
-  box-sizing: border-box;
-  position: relative;
+
+  &::before {
+    background-size: cover;
+  }
 
   &__title {
     @include font(em(52), 900);
@@ -17,7 +22,7 @@
   &__description {
     @include font(em(24), 500);
 
-    margin-top: rem(33);
+    margin-top: rem(15);
 
     text-transform: uppercase;
   }
@@ -27,7 +32,7 @@
   }
 
   &__clothes {
-    @include size(7);
+    @include size(7.5);
     @include size-md(12);
 
     &::before {
@@ -75,7 +80,7 @@
   }
 
   &__clothes-children {
-    @include size(5);
+    @include size(4.5);
 
     padding: rem(28) rem(26);
     background-color: #fffeec;
@@ -137,7 +142,6 @@
 
       background-image: url('../img/shoes.jpg');
       background-repeat: no-repeat;
-      background-size: cover;
       border-radius: rem(30);
       border: 2px solid #fffeec;
     }
@@ -174,7 +178,7 @@
   }
 
   &__market {
-    @include size(6);
+    @include size(4.5);
     padding: rem(36) rem(19) rem(25) rem(19);
 
     background-color: #767676;
@@ -184,33 +188,33 @@
       visibility: visible;
 
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      flex-direction: column-reverse;
 
       width: 100%;
       height: 100%;
 
       .box__title {
-        align-self: flex-end;
-        width: 237px;
-        font-size: 36px;
-        font-weight: 900;
-        color: #fffeec;
-        text-align: right;
+        @include font(rem(50), 900);
+
+        font-family: $ff-proxima-black;
+        text-align: center;
+        color: #535252;
       }
 
       .box__description {
-        align-self: center;
-        font-size: 70px;
-        text-transform: uppercase;
-        font-family: 'Proxima Nova Bl';
-        color: #535252;
+        @include font(rem(36), 900);
+
+        font-family: $ff-proxima-black;
+        text-align: right;
+        margin-top: 0;
+        margin-bottom: auto;
+        color: #fffeec;
       }
     }
   }
 
   &__bed {
-    @include size(3);
+    @include size(3.5);
 
     &::before {
       content: '';
@@ -234,8 +238,7 @@
     &:hover,
     &:focus {
       & > .box__hidden-content {
-        padding-left: rem(17);
-        padding-bottom: rem(34);
+        padding: rem(34) rem(16);
         visibility: visible;
 
         position: absolute;
@@ -269,8 +272,47 @@
       }
     }
   }
-}
 
-// &__bags {
-//   @include size(3);
-// }
+  &__bags {
+    @include size(4);
+
+    padding: rem(14) rem(8);
+
+    position: relative;
+
+    background-color: var(--def-lavender);
+
+    &::before {
+      content: '';
+
+      width: 192px;
+      height: 203px;
+      display: block;
+
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      background-image: url('../img/yellow_bag.png');
+      background-repeat: no-repeat;
+    }
+
+    .box__hidden-content {
+      visibility: visible;
+      width: 100%;
+    }
+
+    .box__title {
+      @include font(rem(48), 900);
+
+      font-family: $ff-proxima-black;
+
+      position: absolute;
+      right: rem(-45);
+      bottom: rem(78);
+
+      transform: rotate(-90deg);
+      color: var(--def-lightyellow);
+    }
+  }
+}
