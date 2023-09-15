@@ -31,6 +31,8 @@ button {
 
 .row {
   @include row-flex;
+
+  align-self: baseline;
 }
 
 .box-wrapper {
@@ -40,10 +42,13 @@ button {
     width: 70%;
     flex-direction: row;
     flex-wrap: wrap;
+    align-self: baseline;
+    min-height: rem(677);
   }
 
   &__column {
     width: 30%;
     flex-direction: column;
+    min-height: rem(677);
   }
 }
