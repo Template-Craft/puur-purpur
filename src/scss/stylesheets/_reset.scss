@@ -52,3 +52,11 @@ button {
     min-height: rem(677);
   }
 }
+
+// класс для отключения ссылок и т.д.
+.disabled {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  -webkit-touch-callout: none;
+}
