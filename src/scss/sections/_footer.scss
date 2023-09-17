@@ -1,0 +1,9 @@
+.footer {
+  padding: rem(10) 0 rem(3);
+
+  background-color: var(--def-black);
+
+  @include md-block() {
+    padding-bottom: rem(30);
+  }
+}

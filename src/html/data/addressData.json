@@ -1,0 +1,14 @@
+[
+  {
+    "cityName": "тула",
+    "cityAddress": "болдина 123",
+    "workTime": "10:00 - 22:00",
+    "iframeSource": "https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=159035061354"
+  },
+  {
+    "cityName": "рязань",
+    "cityAddress": "чапаева 59",
+    "workTime": "10:00 - 22:00",
+    "iframeSource": "https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=159035061354"
+  }
+]
