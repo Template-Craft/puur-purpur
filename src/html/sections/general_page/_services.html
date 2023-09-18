@@ -8,6 +8,8 @@
         @@include_once('components/_clothes-cards.html', { "classModif": "box__shoes", "boxTitle":
         "обувь", "boxDescription": "ручная чистка " })
       </div>
+
+      @@loop('components/_marquee.html', '../html/data/marqueeData.json')
     </div>
   </div>
 </section>
