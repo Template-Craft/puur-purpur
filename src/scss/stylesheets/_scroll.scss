@@ -1,0 +1,25 @@
+// Кастомный скролл, на основе цветов макета
+
+$default_state_scrollbar_clr: #a7a7a7;
+$window_inactive_clr: #818181;
+$scrollbar_thumb_hover_clr: #bcb4ff;
+
+// width
+html::-webkit-scrollbar {
+  width: rem(8);
+  background: var(--def-black);
+}
+
+// handle
+html::-webkit-scrollbar-thumb {
+  border-radius: rem(20);
+  background-color: $default_state_scrollbar_clr;
+
+  &:hover {
+    background-color: $scrollbar_thumb_hover_clr;
+  }
+
+  &:window-inactive {
+    background-color: $window_inactive_clr;
+  }
+}

@@ -2,7 +2,8 @@
   @include col;
 
   height: rem(321);
-  margin-bottom: $offset;
+  margin-top: $offset_one_side;
+  margin-bottom: $offset_one_side;
 
   overflow: hidden;
   position: relative;
@@ -131,7 +132,9 @@
 
   &__shoes {
     @include size(12);
-    min-height: rem(677);
+
+    // min-height: rem(677);
+    height: 100%;
 
     &::before {
       content: '';

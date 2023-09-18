@@ -10,9 +10,9 @@
     "boxDescription": "рекомендовано дерматологами"
   },
   {
-    "classModif": "box__market",
-    "boxTitle": "скоро запустим",
-    "boxDescription": "маркет"
+    "classModif": "box__market disabled",
+    "boxTitle": "маркет",
+    "boxDescription": "скоро запустим"
   },
   {
     "classModif": "box__bed",
