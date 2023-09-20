@@ -1,0 +1,25 @@
+.marquee {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: calc(#{rem(83)} - #{rem(40)});
+
+  margin-top: rem(47);
+  padding: rem(20) 0;
+  overflow: hidden;
+  position: relative;
+
+  background-color: var(--def-lightyellow);
+
+  &__description {
+    @include font(rem(48), 900);
+
+    white-space: nowrap;
+
+    font-family: $ff-proxima-black;
+    text-transform: uppercase;
+
+    color: var(--def-black);
+  }
+}
