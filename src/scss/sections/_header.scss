@@ -1,0 +1,55 @@
+.header {
+  padding: {
+    top: rem(48);
+    left: rem(42);
+    right: rem(42);
+    bottom: rem(25);
+  }
+
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+
+  background-color: var(--def-lightyellow);
+
+  &__col {
+    @include col;
+    @include size(6);
+
+    display: flex;
+  }
+
+  &__widget {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__logo_link {
+    display: inline-flex;
+    align-self: flex-end;
+  }
+
+  &__link_order_status {
+    @include font(rem(30), 900);
+
+    font-family: $ff-proxima-black;
+    text-transform: uppercase;
+
+    margin-right: rem(46);
+
+    color: var(--def-black);
+
+    @include md-block() {
+      font-size: rem(20);
+    }
+  }
+
+  // кнопка
+  &_burger_wrapper {
+    display: inline-flex;
+    align-self: flex-end;
+
+    margin-bottom: rem(14);
+  }
+}

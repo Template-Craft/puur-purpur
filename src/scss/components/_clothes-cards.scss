@@ -135,6 +135,7 @@
 
     // min-height: rem(677);
     height: 100%;
+    border: 2px solid #fffeec;
 
     &::before {
       content: '';
@@ -146,7 +147,6 @@
       background-image: url('../img/shoes.jpg');
       background-repeat: no-repeat;
       border-radius: rem(30);
-      border: 2px solid #fffeec;
     }
 
     &:hover,
