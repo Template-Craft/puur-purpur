@@ -12,6 +12,11 @@
 
   background-color: var(--def-lightyellow);
 
+  @include md-block() {
+    padding-left: rem(14);
+    padding-right: rem(14);
+  }
+
   &__col {
     @include col;
     @include size(6);
