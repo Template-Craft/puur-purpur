@@ -123,6 +123,7 @@ gulp.task('html', function (callback) {
           hiddenBlock: false, // -> по умолчанию нет скрываемого блока
           imageMode: false, // -> по умолчанию нет изображения
           onlyTitle: false, // -> режим только заголовка по умолчанию откл.
+          elementName: 'article',
         },
       }),
     )

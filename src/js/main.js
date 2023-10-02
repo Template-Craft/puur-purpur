@@ -1,3 +1,5 @@
+'use strict';
+
 // делаем бегущую строку
 
 // Получаем элементы
@@ -52,4 +54,17 @@ const marqueeAnimationStop = marquee.addEventListener('mouseover', (event) => {
 // слушаем событие "курсор мыши убран с элемента", и вызываем обработчик событий
 const marqueeAnimationStart = marquee.addEventListener('mouseout', (event) => {
   marqueeStateHandler(event);
+});
+
+// Burger menu
+const btnBurger = document.querySelector('.btn-burger-menu');
+const burgerNavMenu = document.querySelector('.burger-nav');
+const bodyEl = document.querySelector('.body-wrapper');
+
+const btnBurgerHandler = btnBurger.addEventListener('click', (event) => {
+  event.preventDefault;
+
+  burgerNavMenu.classList.toggle('is-active');
+  bodyEl.classList.toggle('burger-menu-activated');
+  btnBurger.classList.toggle('is-clicked');
 });

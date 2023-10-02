@@ -1,5 +1,6 @@
 [
   {
+    "elementName": "a href='#'",
     "onlyTitle": true,
     "classModif": "info-card__info",
     "cardTitle": "сервис , который дарит свободу"
