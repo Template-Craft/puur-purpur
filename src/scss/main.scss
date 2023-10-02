@@ -16,4 +16,7 @@
 @import 'sections/general_page/_about_us.scss';
 @import 'sections/general_page/_works.scss';
 
+//Подключаем стили для страницы услуг
+@import 'sections/services_page/services.scss';
+
 @import 'sections/_footer.scss';
