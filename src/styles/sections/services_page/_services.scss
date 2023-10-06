@@ -1,16 +1,22 @@
 .services-page {
   .header {
     background-color: var(--def-black);
-  }
-  
+    padding-top: rem(111.5);
 
-  .burger_icon > rect {
-    fill: var(--def-lightyellow);
-  }
+    &__logo--svg path {
+      fill: var(--def-lightyellow);
+    }
 
+    &__link_order_status {
+      display: none;
+    }
+
+    .burger_icon > rect {
+      fill: var(--def-lightyellow);
+    }
+
+    &__burger_wrapper {
+      margin-bottom: rem(0);
+    }
+  }
 }
-
-
-
-
-
